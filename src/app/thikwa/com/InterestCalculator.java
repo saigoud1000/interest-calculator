@@ -39,7 +39,7 @@ public class InterestCalculator {
 		double interestPercentage = myObj.nextDouble();
 
 		System.out.println("Here are the details you gave us :" + "Total Amount To Lend = " + totalAmountToLend
-				+ " Loan Term = " + loanTerm + " , Monthly Principle Payment Amount = " + monthlyPrinciplePayment
+				+ ", Loan Term = " + loanTerm + " , Monthly Principle Payment Amount = " + monthlyPrinciplePayment
 				+ " ,and Interest Percentage = " + interestPercentage);
 
 		for (int i = 0; i < finalLoanTerm; i++) {

@@ -1,0 +1,49 @@
+<html>
+
+<head>
+
+<h1>Interest Calculator</h1>
+
+</head>
+<body>
+
+	<form id="frm1">
+
+		Enter Amount you want to lend: <input type="text" id="amountolend"><br>
+
+		Please Enter The Loan Term In Months: <input type="text" id="loanTerm"><br>
+
+		Enter percentage: <input type="text" id="loanPercentage"><br>
+
+		<input type="button" onclick="myFunction()" value="Submit">
+
+	</form>
+<p id="demo">hi</p>
+	<script>
+		function myFunction() {
+			console.log("Sai clicked on submit");
+			var totalAmountToLend = document.getElementById("amountolend").value;
+			var loanTerm = document.getElementById("loanTerm").value;
+			var loanPercentage = document.getElementById("loanPercentage").value;
+			var finalLoanTerm = parseFloat(loanTerm) + 1;
+			var monthlyPrinciplePayment = totalAmountToLend / loanTerm;
+			var totalMonthlyPayment;
+			
+			for (var i = 0; i < finalLoanTerm; i++) {
+				var remainingAmount = (totalAmountToLend - monthlyPrinciplePayment
+						* i);
+				var newTotalAmount = remainingAmount;
+				var interestAmountPerMonth = (remainingAmount * loanPercentage) / 100;
+				var totalMonthlyPayment = interestAmountPerMonth
+						+ monthlyPrinciplePayment;
+				console.log(totalMonthlyPayment)
+				
+			}
+			return totalMonthlyPayment;
+			document.getElementById("frm1").submit();
+		}
+		document.getElementById("demo").innerHTML = myFunction();
+	</script>
+	
+</body>
+</html>
